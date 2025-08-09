@@ -1,0 +1,699 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{tikz}
+\usepackage{setspace}  
+\usepackage[a4paper, margin=2cm]{geometry}  
+
+\onehalfspacing 
+
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+
+\setlength{\baselineskip}{0pt}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=black,
+}
+
+\title{Math Notes}
+\author{by me}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+This is a work in progress.
+
+$$\lim_{me \rightarrow insanity} me$$
+
+\tableofcontents
+
+\section{Arithmetic}
+\subsection*{Order of Operation}
+1. Parenthesis
+
+2. Exponents
+
+3. Multiplication \& Division (left to right)
+
+4. Addition \& Substraction
+
+\subsection{Basics}
+$\forall a,b,c \in \mathbb{R} $ gilt:
+
+Kommutativgesetz:
+
+$a+b = b+a \text{ und } a*b=b*a$
+
+Assoziativgesetz:
+
+$(a+b)+c = a+(b+c)$ und $(a*b)*c=a*(b*c)$
+ 
+Distributivgesetz
+
+$a*(b+x) = a*b+a*c$ und $(a+b)*c = a*c + b*c$
+
+\subsection{Fractions}
+Rules:
+\begin{align*}
+    \frac{a}{b} + \frac{c}{b} &= \frac{a+c}{b} \\
+    \frac{a}{b} - \frac{c}{b} &= \frac{a-c}{b} \\
+    \frac{a}{b} \cdot \frac{c}{d} &= \frac{ac}{bd} \\
+    \frac{a}{b} \div \frac{c}{d} &= \frac{a}{b} \cdot \frac{d}{c} = \frac{ad}{bc} \\
+    \frac{a}{\frac{b}{c}} &= \frac{a \cdot c}{b} = \frac{ac}{b} \\
+    \frac{1}{\frac{b}{c}} &= \frac{c}{b}
+\end{align*}
+
+\subsection{Exponents}
+Rules:
+\begin{align*}
+    a^n \cdot b^n = (ab)^n \\
+    a^n \cdot a^m = a^{n+m} \\
+	(a^n)^m = a^{nm}=a^{mn}=(a^{m})^{n} \\ 
+	\frac{a^n}{b^n}=(\frac{a}{b})^n \\ 
+    \frac{a^n}{b^n}=a^{n-m}
+\end{align*}
+
+\subsection{Roots}
+Rules:
+\begin{align*}
+    \sqrt[n]{a} \cdot \sqrt[n]{b} = \sqrt[n]{ab} \\ 
+    \sqrt[n]{\sqrt[m]{a}} = \sqrt[m]{\sqrt[n]{a}} = \sqrt[nm]{a} \\
+    \frac{1}{\sqrt[n]{a}} = \sqrt[n]{\frac{1}{a}} (a \neq 0) \\ 
+    \frac{\sqrt[n]{a}}{\sqrt[n]{b}} = \sqrt[n]{\frac{a}{b}} (b \neq 0) \\ 
+    (\sqrt[n]{a})^m = \sqrt[n]{a^m}
+\end{align*}
+
+Wichtig!
+
+$\sqrt{a+b} \neq \sqrt{a} + \sqrt{b}$
+$\sqrt{x^2} \neq x $
+
+\subsection{Logarithms}
+
+$$ \log_a{y} = x \Leftrightarrow a^x = y $$
+
+\begin{align}
+    \log_a(xy) = \log_a{x} + \log_a(y) \\ 
+    \log_a(\frac{x}{y})=\log_a(x) - log_a(y) \\ 
+    \log_a(x^r) = r \log_a(x) \\
+    \log_a(x) = \frac{\log_b(x)}{\log_b(a)}
+\end{align}
+Auf (3) folgt:
+$\log(\sqrt{x}) = \log_a(x^{\frac{1}{2}})=\frac{1}{2} \log_a(x)$
+
+
+\subsection{Binomial Equations}
+\begin{align*}
+    \text{B1: }(a+b)^2 = a^2 +2ab +b^2 \\ 
+    \text{B2: }(a-b)^2 = a^2 -2ab +b^2 \\
+    \text{B3: }(a+b)(a-b) = a^2 - b^2
+\end{align*}
+
+
+\section{Linear Equations}
+$f(x) = mx+b, \quad m,b \in \mathbb{R} $
+
+Steigung:
+
+Gegeben sind: Zwei Punkte $P(x_1|y_2) \text{ und } Q(x_2|y_2)$
+
+$m := \frac{\Delta y}{\Delta x}:=\frac{y_1 - y_2}{x_1 - x_2} (= \frac{y_2-y_1}{x_2-x_1})$
+
+$b :=$ verschiebung auf der Y Achse
+
+parralel $(f \parallel g)$, falls $m_1 = m_2$
+
+orthogonal $ (f \perp g) $ oder senkrecht, falls $m_1 \cdot m_2 = -1$
+
+\subsection{Berechnung der Schnittpunkte von $f: \mathbb{R} \rightarrow \mathbb{R}, f(x)=mx+b$ mit den Achsen}
+
+y-Achse:
+
+$f(0) = m \cdot 0 + b = b$, (0|b) ist der schnittpunkt mit der y-Achse
+
+x-Achse:
+
+löse diese Gleichung:
+
+$f(x) = 0  \Longleftrightarrow mx + b = 0 \Longleftrightarrow mx = -b $
+
+Fallunterscheidung:
+
+\[
+x =
+\begin{cases} 
+-\frac{b}{m}, & \text{if } m \neq 0 \text{ (one unique x-intercept)} \\
+\mathbb{R}, & \text{if } m = 0 \text{ and } b = 0 \text{ (entire x-axis is the solution)} \\
+\text{no solution}, & \text{if } m = 0 \text{ and } b \neq 0 \text{ (no x-intercept)}
+\end{cases}
+\]
+
+\fbox{Die x-Koordinate eines Schnittpunktes mit der x-Achse heißt Nullstelle der Funktion}
+ % Seite 41
+
+\section{Quadratic Equations}
+We use quadratic equations for a bunch of shit, for example modelling of
+procesesses.
+
+\subsection{General form of an quadratic equation}
+
+$$f(x)=ax^2 + bx +c \quad \text{ with } a,b_1,c_1 \in \mathbb{R}, a \neq 0$$
+
+geschrieben in absteigender Reihenfolge der Potenzen
+
+Standard Parabola:
+$f(x)=x^2$
+
+Example:
+$f(x)=2x^2+6x+4$
+
+\subsection{Scheitelpunktform}
+
+$f(x)=a(x-b_1)^2+c_2 \quad a,b_1,c_1 \in \mathbb{R}, a \neq 0$
+wobei \( (b_1, c_1) \) der Scheitelpunkt ist
+
+
+Wenn a=1 ist nennt man die Funktionsgleichung in beiden Formen normiert.
+
+Example:
+
+$f(x)=2(x-2)^2+1$
+
+$\Rightarrow V(2, 1)$
+
+\subsection{Factored Form}
+
+$f(x)=a(x-r_1)(x-r_2)...(x-r_n)$
+
+Where $r_n$ are the Zero Points
+
+Example:
+$f(x)=-3(x+1)(x+3)$, if "x" is positive then it's the negative zero point
+so it's -1 and -3, I think
+
+\subsection{Mitternachtsformel und p - q Formel}
+
+$$x_1,2 = \frac{-b \pm \sqrt{b^2 - 4ac}}2a{}$$
+
+\[
+D =
+\begin{cases} 
+\text{Zwei Lösungen}\in\mathbb{R}, & \text{if } D=b^2 - 4ac > 0 \\
+\text{genau eine Lösung: } x = \frac{-b}{2a}, & \text{if } D=b^2 - 4ac =0 \\
+\text{Keine Lösung in} \mathbb{R}, & \text{if } D=b^2 - 4ac < 0 
+\end{cases}
+\]
+
+
+
+
+\section{Symbolic Notation}
+$\forall$ - for all / every / any
+
+$\exists$ - there exists
+
+$\nexists$ - there does not exists
+
+$\iff$ - if and only if
+
+$\le$ - less then
+
+$\leq$ - less then or equal to
+
+$\ge$ - greater then
+
+$\geq$ - greater then or equal to
+
+$\Box$ - end of proof
+
+$:=$ - Zuweisung
+
+\subsection*{Examples}
+
+b:= battery  
+
+p:=power
+
+$B=\{set\ of\ batteries\}$
+
+$B_L=\{live\ batteries\}$
+
+$B_d=\{dead\ batteries\}$
+
+If $ b \in B_L $, then there is p
+
+$ b \in B_L \Rightarrow \exists p $
+
+If b is in a set of live batteries, there is power
+
+$ b \in B_d \Rightarrow \nexists p $
+
+b is a subset of $B_d$, if and only if there does not exist power
+
+$\nexists \Rightarrow b \in B_d$
+
+if there is no power, the battery is in the set of dead batteries
+
+$b \in B_L$
+
+$\therefore \exists p$  (this means therefore exists p)
+
+b is in $B_L$ (live batteries), therefore there must be power.
+
+\section{Sets}
+\subsection{Set Builder Notation}
+
+Example: Infinite set of even Integers
+
+$E=\{..., -6, -4, -2, 0, 2, 4, 6, ...\}$
+
+Because we cannot write out the entire Set we can use Set Builder Notation
+to represent it.
+Like so:
+
+$E=\{2n : n \in \mathbb{Z}$
+
+Often times uppercase letters are used to stand for sets this is not
+a rule it just makes things more readable.
+
+Some special sets or sets with significance are denoted using special uppercase letters
+like $\mathbb{Z},\mathbb{N},\mathbb{Q}$.
+
+Sets aren't ordered, meaning that $\{0,2,4,6\}$ = $\{2,6,4,0\}$
+
+\subsection{Cardinality}
+
+Cardinality is an attribute of sets, it's the number of elements a set
+posesses, i.e. $A={0,2,4,6}$; $|A|=4$, the set A posseses 4 elements, meaning
+that it's cardinality is that of 4.
+
+We denote cardinality using these bar symbols: $| |$
+because we use the same for absolute values you need to be careful to
+not confuse the two. Again the absolute value of a number would be something
+like: $|-4|=4$.
+
+Here's an example where we use the absolute value in set builder notation:
+
+$B=\{ x \in \mathbb{Z}: |x|<4 \}=\{-3,-2,-1,0,1,2,3\}$
+
+Why are there negative numbers here? Well we are looking for numbers
+that have an absolute value that is smaller then 4 and -3 has an absolute
+value of 3 and that is indeed smaller than 4. As you see we are not
+doing an operation in set builder notation but "filtering" values, you could
+say.
+
+\section{Linear Algebra}
+
+\subsection{Overview}
+
+\subsection{The Geometry of Linear Equations}
+
+The Fundamental Problem of linear algebra: Solving a system of linear equations
+
+\subsubsection*{Example}
+
+What's the coefficient matrix?
+
+a matrix is just a rectengular array of numbers
+
+a coefficient is a numerical factor in front of a variable in a term.
+
+A term is a expression or a part of an expression seperated by + or - signs.
+
+For example in 2x+5, you got two terms: 2x and 5.
+
+We have n equations and n unknows,
+so we have the normal/nice case of equal number of equations and unknowns
+
+Two equations, two unknowns.
+
+$2x-y=0$
+and
+
+$-x+2y=3$
+
+This gives us the matrix picture:
+
+$$
+\overset{A}{\begin{bmatrix}
+ 2 \- 1 \\ 
+ -1\ 2
+\end{bmatrix}}
+\overset{x}{\begin{bmatrix}
+x \\ y 
+\end{bmatrix}}
+= \overset{b}{\begin{bmatrix}
+0 \\ 3
+\end{bmatrix}}
+$$
+
+
+
+
+
+In this one we have two rows and two columns
+\subsubsection*{Picture 1: Row picture}
+First we describe the row picture
+
+\subsubsection*{Picture 2: Column picture}
+Using a Matrix we'll call A
+
+\subsection{COPIED FROM OLD ORG FILE: Introduction}
+A way to solve many mathematical problems is to translate/ reduce them into linear algebra.
+After that the problems in linear algebra reduces down to the solving of a system of linear equatuion,
+which in turn comes down to the manipulation of matrices.
+
+So it's:
+
+mathematical problem  $\rightarrow$ linear algebra $\rightarrow$ linear equations $\rightarrow$ matrix manipulation
+
+
+Linear Algebra's power doesen't just lie in the manipulation of matricies and the solving
+of linear equations, but also in that it allows us to abstract *concrete objects* down into the
+ideas of vector spaces and linear transformation, allowing us to link many different concepts
+together. Or just reveal these links between seemingly very different topics.
+
+Not only linear algebra has this power, as any good abstraction, meaning some mathematical
+system like linear algebra, has this power.
+
+*there are many ways of telling when a system of $n$ linear equations in $n$ unknowns have a solution.*
+
+
+\subsection{ The Basic Vector Space: $R^n$}
+
+The quintessential vector space is $R^n$, the set of all n-tuples of real numbers
+
+$\{ \left( x_{1},\ldots ,x_{n}\right):x_i\in\mathbb{R}\}$
+
+$x_i$ is a n-tuple, meaning a tuple of somekind of, or rather any size, $x_i$ is part of the set R.
+
+$R^n$ is a set of all n-tuples.
+
+you can also look at this like that:
+
+
+$a=\begin{pmatrix} x_1 \\ \vdots \\x_n \end{pmatrix}, a \in \mathbb{R}$
+
+at least I think you can. Not too sure!
+
+
+you can  add together two n-tuples to get another n-tuple:
+$(x_1,\ldots, x_n)+(y_1,\ldots, y_n)=(x_1+y_1,\ldots, x_n+y_n)$
+
+another way to present this would be:
+
+$$\begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix} + \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix} = \begin{pmatrix} x_1+y_1 \\ \vdots \\ x_n+y_n \end{pmatrix}$$
+
+again, no idea if this is legitimate.
+
+We can also multiply each n-tuple by some real number $\lambda$, here lambda just is a skalar, and just represents some real number.
+
+$\lambda(x_1, \ldots , x_n)=(\lambda \cdot x_1, \ldots, \lambda \cdot x_n)$
+
+represented by a column vector:
+
+$\lambda \cdot \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix} = \begin{pmatrix} \lambda \cdot x_1 \\ \vdots \\\lambda \cdot x_2 \end{pmatrix}$
+
+this is also known as multiplying by a skalar, the skalar is simpy a real number.
+
+We call these n-tuples vectors and the real numbers $\lambda$ are called scalars.
+
+
+The natural map or morphisim from some $R^n$ to and $R^m$ is given by matrix
+
+\subsection{What are Natural Maps?}
+
+Natural Maps are connection between different mathematical objects that arise naturally.
+They arise from them without using any additional mathematical object of function, meaning
+the map comes from the properties of the thingie itself. The natural map preserves the function
+of the mathematical objects.
+
+
+Now let's do a morphism between $R^n$ and $R^m$
+
+Let's write a vector in $R^m$ as a column vector with $m$ entries
+
+Let $A$ be an m $\times$ n matrix
+
+
+
+$$
+A=\begin{pmatrix} a_{11} & a_{12} & \ldots & a_{1n} \\ \vdots & \vdots & \vdots & \vdots \\ a_{m1} & \ldots & \ldots & a_{mn} \end{pmatrix}
+$$
+
+
+Then $Ax$ is the m-tuple:
+
+$$
+Ax=\begin{pmatrix} a_{11} & a_{12} & \ldots & a_{1n} \\ \vdots & \vdots & \vdots & \vdots \\ a_{m1} & \ldots & \ldots & a_{mn} \end{pmatrix} \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix} = \begin{pmatrix} a_{11} \cdot x_1 + \ldots + a_1n \cdot x_n \\ \vdots \\ a_{m1} \cdot x_1 + \ldots + \ a_mn \cdot x_n \end{pmatrix}
+$$
+
+For any two vectors $x$ and $y$ in $R^n$ and any two scalars $\lambda$ and $\mu$, we have:
+
+$$
+A(\lambda x+\mu y)=\lambda Ax+\mu Ay
+$$
+
+Dieser Ausdruck ist einfach nur dafür da um die gesamten operationen von $R^n$ und $R^m$ zu zeigen
+
+$x,y$ sind vektoren, $A$ ist eine Matrix, $\lambda$ ist ein Skalar, was der Ausdruck zeigt ist wie Skalare,
+Vektoren und Matricen miteinander interagieren, jedenfalls ist das mein read.
+
+Now we relate what we have learned to the solving of a system of linear equations
+
+System of linear equations:
+
+$$
+\begin{aligned}
+    a_{11}x_{1} + \ldots + a_{1n}x_{n} & = b_{1} \\
+    & \hspace{0.14cm} \vdots \\
+    a_{m1}x_{1} + \ldots + a_{mn}x_{n} & = b_{m}
+    \end{aligned}
+$$
+
+If we have a few equations, that's fine, but if we have a
+fuckton, it become a nightmare to work with them,
+so we can just rewrite the problem like that:
+$$
+b=\begin{pmatrix} b1 \\ \vdots \\ b_{m} \end{pmatrix}, A=\begin{pmatrix} a_{11} & a_{12} & \ldots & a_{1n} \\ \vdots & \vdots & \vdots & \vdots \\ a_{m1} & \ldots & \ldots & a_{mn} \end{pmatrix}
+$$
+and we write our unknowns as:
+
+$$x=\begin{pmatrix} x_1 \\ \vdots \\x_n \end{pmatrix}$$
+
+This way we can rewrite our system of linear equation in this
+form:
+
+$Ax = b$
+
+$m = equations$
+
+$n = unknows$
+
+when $m > n = no\ solutions$
+
+when $m < n = many\ solutions$
+
+
+\section{Calculus}
+\subsection{Basics}
+In Calculus we mostly have derivatives and integrals. The relationship between the two is
+reciprocal, more on that later.
+
+Let's start with derivatives.
+
+\subsection{Limits}
+Limits are all about the behaviour of vairables/ functions when approaching
+a number or infinity.
+
+They are denoted by $ \lim_{x \rightarrow X} $
+where $X$ is the number they are approaching.
+Here's an example:
+
+$\lim_{x \rightarrow \pm \infty} 2x ^2 + x^2 = + \infty$
+
+Here we took the limit of the equation $2x^2 + x^2$ and determined that the
+equation approaches positive infinity.
+
+Basically how we do this is we put in larger and larger numbers to see how the
+function behaves, if the function keeps growing it approaches positive infinity,
+if it keeps decreasing it is approaching negative infinity.
+
+We can of course also take limits where we approach a variable to a real number
+
+like for example:
+
+$\lim_{x \rightarrow \pm -2} 2x ^2$
+
+As we approach $-2$ from BOTH directions, we can look at what solution the function approaches,
+like we put in -1.9999999 or -2.1111111 we can see that the function keeps approaching the
+number 8.
+
+
+This stuff always gave me problems, because I know mathematics as a sort of precises thing
+and limits always seemed unprecise, but hey they work and yes they are that simple. It threw
+me off too at first.
+
+
+\subsection{Derivatives}
+When we want to know how much a function changes at a point, we take the derivative and
+plug in the point in the new function we get.
+
+
+Point: p
+\begin{align}
+f(x)=x^2
+\\
+f'(x)=2x
+\\
+p=2
+\\
+f'(2)=2*2=4
+\end{align}
+
+Now what do we do when we derive a function?
+
+We basically look at how much a function changes at every point and encode this information
+into a function.
+
+There are derivative rules you can use to get there, but to fully understand
+whats going on we should go through the steps manually, at least once,
+but a few times would be better.
+
+\begin{align*}
+    \frac{df(h)}{dh} & = \lim_{\Delta \rightarrow 0} \frac{\Delta f}{\Delta h} = \lim_{\Delta h \rightarrow 0} \frac{f(h + \Delta h) - f(h)}{\Delta h}  
+    \\
+    f(h) &= h^2 & & \quad  \text{add } \Delta h:
+    \\
+    f(h + \Delta h) &= (h + \Delta h)^2 & & \quad \text{solve Parenthesis}
+    \\
+    f(h + \Delta h) &= h^2 + 2h\Delta h + \Delta h^2 & & \quad \text{subtract } f(h)
+    \\
+    f(h + \Delta h) - f(h) &= h^2 + 2h\Delta h + \Delta h^2 - h^2 & & \quad \text{cancel out } h^2
+    \\
+    f(h + \Delta h) - f(h) &= 2h\Delta h + \Delta h^2 & & \quad \div \Delta h
+    \\
+    \frac{f(h + \Delta h) - f(h)}{\Delta h} &= \frac{2h\Delta h + \Delta h^2}{\Delta h} & & \quad \text{factor out } \Delta h
+    \\
+    \frac{f(h + \Delta h) - f(h)}{\Delta h} &= \frac{\cancel{\Delta h}(2h + \Delta h)}{\cancel{\Delta h}} & & \quad
+    \\
+    \frac{f(h + \Delta h) - f(h)}{\Delta h} &= 2h + \Delta h & & \quad \text{now  take the limit: } \lim_{\Delta h \to 0}
+    \\
+    f'(h) &= \lim_{\Delta h \to 0} \frac{f(h + \Delta h) - f(h)}{\Delta h} = 2h & & \quad
+\end{align*}
+
+
+\subsection{Derivative Rules}
+Now of course we don't always want to do all that to take the derivative.
+That's why we use some rules.
+
+\subsubsection{Power Rule}
+\begin{align*}
+    \frac{d}{dx}(x^n)=n \cdot x^{n-1}
+    \\
+    \frac{d}{dx}[x]=1
+    \\
+    \frac{d}{dx}[i]=0
+    \\
+    i \text{ here is some number}
+\end{align*}
+
+Example
+
+\begin{align*}
+    f(x)=x^3
+    \\
+    \frac{d}{dx}=3 \cdot x^2
+\end{align*}
+
+\subsubsection{Product Rule}
+\begin{align*}
+    \frac{d}{dx}[f(x) \cdot g(x)] = f(x) \cdot g'(x) + g(x) \cdot f'(x)
+\end{align*}
+
+\subsubsection{Quotient Rule}
+\begin{align*}
+    \frac{d}{dx}[\frac{f(x)}{g(x)}] = \frac{g(x)f'(x)-f(x)g'(x)}{[g(x)]^2} \ [if\ g(x) \neq 0]
+\end{align*}
+
+\subsection{Integrals}
+\subsubsection{Trigonometric Substitution}
+The universal trig sub
+
+\begin{align*}
+    tan(\frac{x}{2}) \leftarrow\rightarrow t
+    \\\\
+    sin(x) \leftarrow\rightarrow \frac{2t}{1+t^2}
+    \\\\
+    cos(x) \leftarrow\rightarrow \frac{1-t^2}{1+t^2}
+    \\\\
+    dx \leftarrow\rightarrow \frac{2dt}{1+t^2}
+\end{align*}
+
+\subsubsection*{Example 1}
+$\int \underbrace{csc(x)}_{\text{cosecant}} dx $
+the standard way to solve this would be something
+like this:
+
+$\int csc(x) dx \cdot \underbrace{\frac{csc(x)-cot(x)}{csc(x)-cot(x)}}_{\text{standrad way of solving this}}$
+
+but we could also just use the substitution table.
+
+$\int csc(x)dx \stackrel{\text{use table}}{=} \frac{1}{\frac{2t}{1+t^2} \cdot \frac{2dt}{1+t^2}}$
+
+$\int \frac{\cancel{1+t^2}}{2t} \cdot \frac{\cancel{2}dt}{\cancel{1+t^2}} = \int \frac{dt}{t}$
+
+$\int \frac{dt}{t} =ln |t| +C $ use table
+
+$\int \frac{dt}{t} = ln |tan(\frac{x}{2})+X|$
+
+the solution doesn't look the same when doing it the standard way, but it is the same!
+
+\subsubsection*{Example 2}
+
+$\int \frac{dx}{2+cos(x)}=\int \frac{1}{2+\frac{1-t^2}{1+t^2}} \cdot \frac{2dt}{1+t^2}$
+
+$\Rightarrow \int \frac{2dt}{2(1+t^2)+1-t^2} \Rightarrow \int \frac{2dt}{2+2^t+1-t^2}$
+
+$\Rightarrow \int \frac{2dt}{3+t^2}$
+
+you can take the two out of the top because it's just a skalar mutliple
+
+$2\int \frac{dt}{3+t^2} = \int \underbrace{\frac{du}{1+u^2}}_{\text{this is just the arctan of u}}$
+
+the trick here is to do the following substitution:
+\begin{align*}
+    t=u\sqrt[2]{3}
+    \\\\
+    dt=\sqrt[2]{3}du
+    \\\\
+    \Rightarrow \frac{1}{\sqrt[2]{3}}dt = du
+\end{align*}
+
+$\frac{2}{\sqrt{3}}arctan(u)+C$
+
+$\frac{2}{\sqrt{3}}arctan(\frac{1}{\sqrt{3}}tan(\frac{X}{2}))+C$
+
+\subsection{Kurvendiskussion Example}
+Unsere Funktion: $f(x)=2x^2+x^4$
+
+\subsubsection{Definitionsbereich}
+
+Definintionsbereich bestimmen basically in welchem Zahlenraum sich die Funktion bewegt
+hier ist es.
+
+$D_f=\mathbb{R}$
+
+\subsubsection{Grenzwerte, Verhalten im undendlichen}
+
+\section{Duale Zahlen}
+
+\end{document}
