@@ -7,5 +7,36 @@ grep but on cisco:
 ```
 show run | sec <pattern>
 ```
-yes you can pipe on cisco, would I do it at any other point then to use `sec`? Absolutely *not*.
 
+```
+show ip interface brief
+```
+
+```
+show vlan-switch brief
+```
+
+```
+show ip route
+```
+more readable I think:
+```
+show run | sec route
+```
+
+show dhcp leases:
+```
+show ip dhcp binding
+```
+
+check if vdsl is synchronized
+```
+show controller vdsl 0
+```
+
+Debbuging:
+
+```
+term mon
+```
+and then use he `debug` command with a ? to find what you want to debug
