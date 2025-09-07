@@ -1,6 +1,8 @@
-# LXC Networking
+# LXC
 
-> flockport is so fucking awesome, they have such good posts
+
+
+# LXC Networking
 
 ## Bridges 
 Bridges are used ot connect VMs to a network.
