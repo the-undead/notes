@@ -1,0 +1,108 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{tikz}
+\usepackage{setspace}  
+\usepackage[a4paper, margin=2cm]{geometry}  
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\newcommand{\img}[2][]{\includegraphics[width=0.5\textwidth,#1]{#2}}
+
+\onehalfspacing 
+
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+
+\setlength{\baselineskip}{0pt}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=black,
+}
+
+\title{Braindump}
+\author{by me}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Warning: These are completely random notes, written in a probably unhelpful way.
+
+\tableofcontents
+
+\section{Triangle inequality theorem}
+
+The triangle inequality theorem states:
+
+The lenght of any side must be smaller than the sum of the other two sides.
+
+\section{Divisibility by 4}
+
+A number is divisible by 4 if the last two digits form a number that is divisible by 4.
+
+\section{Find an equation that passes through two points}
+
+Linear Function Equation:
+$y=mx+b$
+
+where $m$ is the slope and $b$ is the y-intercept
+
+$m=\frac{y_2-y_1}{x_2-x_1}$
+
+
+Basically just put the points in the equation.
+
+TODO:fix section
+
+\section{Fundamental geometric objects}
+
+\subsection{Points}
+Point: Exact location in space, has no size (no length,widht, depth), only position.
+A point is indicated with a dot usually labled with a capital letter (P,Q,S,..)
+
+\img{points.png}
+
+A line is a straight object that is infinitly long and has no width. Like an infinite collection of point, going to infinity in both directions.
+
+\img{line1.png}
+
+\subsection{Lines}
+
+This line that passes through the points P and Q is written like so:
+
+$ \overleftrightarrow{PQ} $
+
+Lines can also be denoted like so with lowercase letters:
+
+\img{line2.png}
+
+\subsection{Rays}
+These are similar to a line but they have a starting point and only extend infinitely in one direction.
+
+Example:
+
+\img{ray1}
+
+A ray that starts at point $P$ and passes through a point $Q$ is expressed as 
+
+$\overrightarrow{PQ}$
+
+
+The arrows tail in the expression is above the starting point.
+
+
+\section{Segment}
+
+\img{segment1}
+
+Like a line but with start and end points, it does not extend infinitely.
+
+A segment with Endpoints P and Q is denoted as $\overline{PQ}$
+
+\end{document}
